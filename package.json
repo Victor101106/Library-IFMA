@@ -31,6 +31,17 @@
       "url": "https://github.com/pollary/"
     }
   ],
+  "scripts": {
+    "git:commit": "cz"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Victor101106/Library-IFMA"
