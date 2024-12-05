@@ -1,5 +1,4 @@
-import { environment } from './configs/dotenv'
-import { instance } from './configs/instance'
+import { environment, instance } from './configs'
 
 instance.listen({ port: environment.PORT }, (error) => {
 
