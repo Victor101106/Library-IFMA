@@ -32,6 +32,7 @@
     }
   ],
   "scripts": {
+    "start:dev": "tsx watch source/server.ts",
     "git:commit": "cz"
   },
   "devDependencies": {
