@@ -55,6 +55,7 @@
   "license": "GPL-3.0-only",
   "dependencies": {
     "fastify": "^5.1.0",
+    "googleapis": "^144.0.0",
     "zod": "^3.23.8"
   }
 }
