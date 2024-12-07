@@ -25,6 +25,7 @@
 - [Environment Variables](#environment-variables)
 - [Conventional Commits](#conventional-commits)
 - [Result Pattern](#result-pattern)
+- [RBAC - Roles and Permissions](#rbac---role-based-access-control)
 - [License](#license)
 - [Contact](#contact)
 
@@ -183,6 +184,30 @@ if (result.isError) {
 console.log(`Result: ${result.value}`); // Process the success value
 
 ```
+
+## RBAC - Role-based Access Control
+
+This project uses Role-based Access Control (RBAC) to manage user permissions based on their roles.
+
+### Roles:
+
+1. Administrator;
+2. Teacher;
+3. Student;
+4. Anonymous.
+
+### Permissions:
+
+|           | Administrator | Teacher | Student           | Anonymous |
+|-----------|---------------|---------|-------------------|-----------|
+| Rent Book | ✅            | ✅      | ⚠️<sup>[1]</sup> | ❌        |
+
+> ✅ means `allowed` \
+> ❌ means `denied` \
+> ⚠️ means `allowed w/ conditions`
+
+#### Conditions:
+1. Students can rent a book for a maximum of seven days and renew the rental at the end of the period with priority.
 
 ## License
 
