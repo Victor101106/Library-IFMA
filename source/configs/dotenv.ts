@@ -1,10 +1,6 @@
-import { z } from 'zod'
+import { EnvironmentSchema } from '../schemas'
 
-const environmentSchema = z.object({
-    PORT: z.number()
-})
-
-const environment = environmentSchema.parse({
+const environment = EnvironmentSchema.parse({
     PORT: Number(process.env.PORT)
 })
 
