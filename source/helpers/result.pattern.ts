@@ -1,37 +1,37 @@
-export type Result<E, S> = Error<E, S> | Success<E, S>
+export type Result<F, S> = Failure<F, S> | Success<F, S>
 
-export class Error<E, S> {
+export class Failure<F, S> {
 
-    constructor(readonly value: E) {}
+    constructor(readonly value: F) {}
 
-    isError(): this is Error<E, S> {
+    isFailure(): this is Failure<F, S> {
         return true
     }
 
-    isSuccess(): this is Success<E, S> {
+    isSuccess(): this is Success<F, S> {
         return false
     }
 
 }
 
-export class Success<E, S> {
+export class Success<F, S> {
 
     constructor(readonly value: S) {}
 
-    isError (): this is Error<E, S> {
+    isFailure (): this is Failure<F, S> {
         return false
     }
 
-    isSuccess (): this is Success<E, S> {
+    isSuccess (): this is Success<F, S> {
         return true
     }
 
 }
 
-export function error<E, S>(E: E): Result<E, S> {
-    return new Error<E, S>(E)
+export function failure<F, S>(F: F): Result<F, S> {
+    return new Failure<F, S>(F)
 }
 
-export function success<E, S>(S: S): Result<E, S> {
-    return new Success<E, S>(S)
+export function success<F, S>(S: S): Result<F, S> {
+    return new Success<F, S>(S)
 }

@@ -129,8 +129,8 @@ This project uses the **Go-based Result Pattern** to manage type-safe operation 
 
 ### Defining `Result`
 
-To define a result, use the generic type `Result<E, S>`, where:
-- `E`: represents the type of the error (failed result).
+To define a result, use the generic type `Result<F, S>`, where:
+- `F`: represents the type of the failure (failed result).
 - `S`: represents the type of the success (successful result).
 
 #### Example:
@@ -146,18 +146,18 @@ function divide(dividend: number, divisor: number): Result<DivisionByZeroError, 
 ### Returning `Result`
 
 To return a result, use:
-- `error(E)`: for failed outcomes, passing an instance of the error type (`E`).
+- `failure(F)`: for failed outcomes, passing the result value (`F`).
 - `success(S)`: for successful outcomes, passing the result value (`S`).
 
 #### Example:
 
-Here’s the implementation of the divide function using `error(E)` for failure and `success(S)` for success:
+Here’s the implementation of the divide function using `failure(F)` for failure and `success(S)` for success:
 
 ```ts
 function divide(dividend: number, divisor: number): Result<DivisionByZeroError, number> {
     
     if (divisor === 0) {
-        return error(new DivisionByZeroError());
+        return failure(new DivisionByZeroError());
     }
 
     return success(dividend / divisor);
@@ -167,7 +167,7 @@ function divide(dividend: number, divisor: number): Result<DivisionByZeroError, 
 
 ### Handling `Result`
 
-To handle a result, use the `isSuccess` and `isError` methods to determine the return type. Then, access the corresponding value safely.
+To handle a result, use the `isSuccess` and `isFailure` methods to determine the return type. Then, access the corresponding value safely.
 
 #### Example:
 
@@ -177,7 +177,7 @@ Here’s an example of using the divide function to calculate the division of `x
 
 const result = divide(x, y); // Get the result
 
-if (result.isError) {
+if (result.isFailure) {
     throw result.value; // Handle the error (e.g., throw)
 }
 
