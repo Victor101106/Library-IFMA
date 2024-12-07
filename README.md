@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-    Web application for management and access control to the library of Instituto Federal do Maranhã - Campus Avançado Porto Franco.
+    Web application for management and access control to the library of Instituto Federal do Maranhão - Campus Avançado Porto Franco.
 </p>
 
 <div align="center">
