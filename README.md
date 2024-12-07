@@ -77,7 +77,7 @@ To run the project correctly, you must set the required environment variables. C
 
 This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification to maintain a clean and consistent commit history.
 
-### How to Use
+### Commitizen: How to Use
 
 1. Stage your changes:
 
@@ -88,7 +88,7 @@ This project follows the [Conventional Commits](https://www.conventionalcommits.
 2. Commit using `Commitizen`:
 
     ```bash
-    npm git:commit
+    npm run git:commit
     ```
 
 3. Follow the interactive prompts.
@@ -100,23 +100,11 @@ The commit message should be structured as follows:
 
 ```bash
 <type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
 ```
-
-The commit type must be followed as follows:
-
-| Type     | Description                                   |
-|----------|-----------------------------------------------|
-| feat     | A new feature                                 |
-| fix      | A bug fix                                     |
-| docs     | Documentation-only changes                    |
-| style    | Code style changes (no logic modifications)   |
-| refactor | Code refactoring (neither fixes nor features) |
-| perf     | Performance improvements                      |
-| test     | Adding or updating tests                      |
-| build    | Changes to the build system or dependencies   |
-| ci       | CI/CD configuration changes                   |
-| chore    | Maintenance tasks (e.g., formatting)          |
-| revert   | Reverts a previous commit                     |
 
 #### Example:
 ```bash
@@ -167,7 +155,7 @@ function divide(dividend: number, divisor: number): Result<DivisionByZeroError, 
 
 ### Handling `Result`
 
-To handle a result, use the `success()` and `failure()` methods to determine the return type. Then, access the corresponding value safely.
+To handle a result, use the `success()` and `failure()` methods of `Result` to determine the return type. Then, access the corresponding value safely.
 
 #### Example:
 
