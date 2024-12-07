@@ -40,7 +40,7 @@ Follow the step-by-step instructions to set up and run the project:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Victor101106/Library-IFMA.git
+    git clone https://github.com/Victor101106/Library-for-IFMA.git
     ```
 
 2. Install dependencies:

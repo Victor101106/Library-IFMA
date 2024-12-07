@@ -1,5 +1,5 @@
 {
-  "name": "library-ifma",
+  "name": "library-for-ifma",
   "description": "Web application for management and access control to the library of Instituto Federal do Maranhão - Campus Avançado Porto Franco.",
   "version": "0.0.1",
   "keywords": [
@@ -47,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Victor101106/Library-IFMA"
+    "url": "https://github.com/Victor101106/Library-for-IFMA"
   },
   "engines": {
     "node": "20.x"
