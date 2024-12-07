@@ -4,11 +4,11 @@ export class Failure<F, S> {
 
     constructor(readonly value: F) {}
 
-    isFailure(): this is Failure<F, S> {
+    failure(): this is Failure<F, S> {
         return true
     }
 
-    isSuccess(): this is Success<F, S> {
+    success(): this is Success<F, S> {
         return false
     }
 
@@ -18,11 +18,11 @@ export class Success<F, S> {
 
     constructor(readonly value: S) {}
 
-    isFailure (): this is Failure<F, S> {
+    failure(): this is Failure<F, S> {
         return false
     }
 
-    isSuccess (): this is Success<F, S> {
+    success(): this is Success<F, S> {
         return true
     }
 
