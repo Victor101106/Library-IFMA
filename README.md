@@ -167,7 +167,7 @@ function divide(dividend: number, divisor: number): Result<DivisionByZeroError, 
 
 ### Handling `Result`
 
-To handle a result, use the `isSuccess` and `isFailure` methods to determine the return type. Then, access the corresponding value safely.
+To handle a result, use the `success()` and `failure()` methods to determine the return type. Then, access the corresponding value safely.
 
 #### Example:
 
@@ -177,7 +177,7 @@ Here’s an example of using the divide function to calculate the division of `x
 
 const result = divide(x, y); // Get the result
 
-if (result.isFailure) {
+if (result.failure()) {
     throw result.value; // Handle the error (e.g., throw)
 }
 
