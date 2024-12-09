@@ -7,10 +7,10 @@ export default (instance: FastifyInstance): void => {
     const apiRoutesFolderPath = join(__dirname, '../routes/api/')
     const viewRoutesFolderPath = join(__dirname, '../routes/views/')
 
-    if (!existsSync(viewRoutesFolderPath) || !existsSync(apiRoutesFolderPath))
-        return
-
-    readdirSync(apiRoutesFolderPath).forEach(file => instance.register(require(`${apiRoutesFolderPath}/${file}`), { prefix: '/api' }))
-    readdirSync(viewRoutesFolderPath).forEach(file => require(`${viewRoutesFolderPath}/${file}`)(instance))
-
+    if (existsSync(viewRoutesFolderPath))
+        readdirSync(viewRoutesFolderPath).forEach(file => require(`${viewRoutesFolderPath}/${file}`)(instance))
+    
+    if (existsSync(apiRoutesFolderPath))
+        readdirSync(apiRoutesFolderPath).forEach(file => instance.register(require(`${apiRoutesFolderPath}/${file}`), { prefix: '/api' }))
+    
 }
